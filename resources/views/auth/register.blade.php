@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 @section('content')
-    <h1 class="fw-bold mb-3">会員登録</h1>
+    <h1 class="fw-bold mb-4">会員登録</h1>
     <div class="d-grid gap-3 mb-5">
         <div>
             <label for="exampleFormControlInput1" class="form-label">名前</label>
