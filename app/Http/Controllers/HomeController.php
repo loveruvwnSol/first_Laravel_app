@@ -8,6 +8,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $threads = \Auth::user()->threads()->orderBy('created_at', 'desc')->get();
+        $data = [
+            'thread' => $threads,
+        ];
+        return view('threads.index', $data);
     }
 }
