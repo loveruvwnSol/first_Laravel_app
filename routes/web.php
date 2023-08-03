@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ThreadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,10 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/threads', [HomeController::class, 'index'])->name('threads.index');
 });
+
+Route::get('/threads', [ThreadController::class, 'index'])->name('threads.index');
+
+Route::get('/threads/post', [ThreadController::class, 'create'])->name('threads.post');
+Route::post('/threads', [ThreadController::class, 'store'])->name('threads.store');
